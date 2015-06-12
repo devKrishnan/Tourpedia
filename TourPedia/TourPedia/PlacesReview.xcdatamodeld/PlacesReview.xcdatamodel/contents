@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="TMCategory" representedClassName="TMCategory" syncable="YES">
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="partOfFilterRequests" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TMFilterRequest" inverseName="hasCategories" inverseEntity="TMFilterRequest" syncable="YES"/>
+    </entity>
+    <entity name="TMFilterRequest" representedClassName="TMFilterRequest" syncable="YES">
+        <attribute name="uniqueHashID" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasCategories" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TMCategory" inverseName="partOfFilterRequests" inverseEntity="TMCategory" syncable="YES"/>
+        <relationship name="hasLocations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TMLocation" inverseName="partOfFilterRequests" inverseEntity="TMLocation" syncable="YES"/>
+        <relationship name="hasReviews" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TMReview" inverseName="reviewsForRequest" inverseEntity="TMReview" syncable="YES"/>
+    </entity>
+    <entity name="TMLocation" representedClassName="TMLocation" syncable="YES">
+        <attribute name="displayName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="hasPlaces" toMany="YES" deletionRule="Cascade" destinationEntity="TMPlace" inverseName="belongsToLocation" inverseEntity="TMPlace" syncable="YES"/>
+        <relationship name="partOfFilterRequests" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TMFilterRequest" inverseName="hasLocations" inverseEntity="TMFilterRequest" syncable="YES"/>
+    </entity>
+    <entity name="TMPlace" representedClassName="TMPlace" syncable="YES">
+        <attribute name="category" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="belongsToLocation" maxCount="1" deletionRule="Nullify" destinationEntity="TMLocation" inverseName="hasPlaces" inverseEntity="TMLocation" syncable="YES"/>
+        <relationship name="hasReviews" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TMReview" inverseName="reviewOfPlace" inverseEntity="TMReview" syncable="YES"/>
+    </entity>
+    <entity name="TMReview" representedClassName="TMReview" syncable="YES">
+        <attribute name="detailsURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="5" defaultValueString="0" syncable="YES"/>
+        <attribute name="source" attributeType="String" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" attributeType="Date" syncable="YES"/>
+        <attribute name="uniqueHashID" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wordsCount" optional="YES" attributeType="Integer 64" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <relationship name="reviewOfPlace" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TMPlace" inverseName="hasReviews" inverseEntity="TMPlace" syncable="YES"/>
+        <relationship name="reviewsForRequest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TMFilterRequest" inverseName="hasReviews" inverseEntity="TMFilterRequest" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TMCategory" positionX="54" positionY="153" width="128" height="90"/>
+        <element name="TMFilterRequest" positionX="36" positionY="126" width="128" height="105"/>
+        <element name="TMLocation" positionX="18" positionY="63" width="128" height="105"/>
+        <element name="TMPlace" positionX="54" positionY="99" width="128" height="120"/>
+        <element name="TMReview" positionX="18" positionY="63" width="128" height="180"/>
+    </elements>
+</model>

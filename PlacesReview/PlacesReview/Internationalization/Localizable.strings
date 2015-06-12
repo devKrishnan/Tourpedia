@@ -1,0 +1,9 @@
+"ReviewsNotAvailable" = "There are no reviews available for your search";
+"ChooseCategoryPlace" = "Please choose a category and a location";
+"ReviewLoadBegan" = "Reviews are being loaded";
+"ReviewLoadEnd" = "Reviews are fetched";
+"CountReviewsAvailable" = "reviews are available";
+"SearchCountReviewsAvailable" = "search results available";
+"SearchTextEmpty" = "Please provided search text";
+"ReviewLoadFailed" = "Review loading failed";
+"NoFilterExists" = "Please filter info from tourpedia to search";

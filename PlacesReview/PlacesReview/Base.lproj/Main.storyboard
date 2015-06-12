@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OcC-xx-wMJ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="hz4-d9-n71">
+            <objects>
+                <navigationController id="OcC-xx-wMJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dTm-JA-Yix">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CXK-LI-CBr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ap-ju-2LT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-952.5" y="337.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PlacesReview" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Cci-ZC-EOH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="mbW-iQ-tDH"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="DPr-mB-qqc"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FoI-vY-RdE">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="hz4-QV-grx"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="filter">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="hz4-QV-grx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="hz4-QV-grx"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="openFilterScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zul-7l-Mhr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="Cci-ZC-EOH" secondAttribute="bottom" constant="-4" id="9Nj-I1-FA6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FoI-vY-RdE" secondAttribute="trailing" constant="20" id="EV3-VF-iEd"/>
+                            <constraint firstAttribute="trailing" secondItem="Cci-ZC-EOH" secondAttribute="trailing" id="FWC-tJ-j9w"/>
+                            <constraint firstItem="FoI-vY-RdE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="500" id="Fka-6U-pjW">
+                                <variation key="heightClass=regular-widthClass=compact" constant="600"/>
+                            </constraint>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FoI-vY-RdE" secondAttribute="bottom" constant="20" id="H0n-R2-3V4">
+                                <variation key="heightClass=regular-widthClass=compact" constant="326"/>
+                            </constraint>
+                            <constraint firstItem="Cci-ZC-EOH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Kye-yq-XkC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FoI-vY-RdE" secondAttribute="trailing" constant="157" id="MWa-2r-pRp"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Cci-ZC-EOH" secondAttribute="bottom" constant="-4" id="RJr-Lf-nUc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FoI-vY-RdE" secondAttribute="trailing" constant="25" id="Xd5-6K-73z"/>
+                            <constraint firstAttribute="trailing" secondItem="Cci-ZC-EOH" secondAttribute="trailing" id="Z8m-1e-uku"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FoI-vY-RdE" secondAttribute="bottom" constant="19" id="qt2-3m-esK"/>
+                            <constraint firstItem="Cci-ZC-EOH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="s9Q-uK-DVz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Cci-ZC-EOH"/>
+                                <exclude reference="FoI-vY-RdE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="H0n-R2-3V4"/>
+                                <exclude reference="qt2-3m-esK"/>
+                                <exclude reference="EV3-VF-iEd"/>
+                                <exclude reference="Fka-6U-pjW"/>
+                                <exclude reference="MWa-2r-pRp"/>
+                                <exclude reference="Xd5-6K-73z"/>
+                                <exclude reference="9Nj-I1-FA6"/>
+                                <exclude reference="FWC-tJ-j9w"/>
+                                <exclude reference="Kye-yq-XkC"/>
+                                <exclude reference="RJr-Lf-nUc"/>
+                                <exclude reference="Z8m-1e-uku"/>
+                                <exclude reference="s9Q-uK-DVz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Cci-ZC-EOH"/>
+                                <include reference="FoI-vY-RdE"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="H0n-R2-3V4"/>
+                                <include reference="qt2-3m-esK"/>
+                                <exclude reference="EV3-VF-iEd"/>
+                                <exclude reference="Fka-6U-pjW"/>
+                                <exclude reference="MWa-2r-pRp"/>
+                                <include reference="Xd5-6K-73z"/>
+                                <include reference="9Nj-I1-FA6"/>
+                                <exclude reference="FWC-tJ-j9w"/>
+                                <include reference="Kye-yq-XkC"/>
+                                <exclude reference="RJr-Lf-nUc"/>
+                                <include reference="Z8m-1e-uku"/>
+                                <include reference="s9Q-uK-DVz"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Kl-pO-iKR"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="filterButton" destination="FoI-vY-RdE" id="uIW-I8-GDK"/>
+                        <outlet property="reviewTableView" destination="Cci-ZC-EOH" id="mk3-ew-08v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244.5" y="316.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="filter" width="64" height="53"/>
+    </resources>
+</document>
